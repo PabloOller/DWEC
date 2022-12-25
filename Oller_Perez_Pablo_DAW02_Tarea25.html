@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta author="Pablo Oller Pérez">
+    <title>Ejercicio 25</title>
+
+</head>
+
+<body>
+    <script>
+        var Arr = new Array(8);
+        pedirValores(Arr);
+        suma(Arr);
+        Elem36(Arr);
+        Val50(Arr);
+
+        function pedirValores(Arr) {
+            for (var i = 0; i < Arr.length; i++) {
+                var num = prompt('Ingresa el valor ' + i + ': ');
+                Arr[i] = parseInt(num);
+            }
+        }
+
+        function suma(Arr) {
+            var suma = 0;
+            for (var i = 0; i < Arr.length; i++) {
+                suma += Arr[i];
+            }
+            alert('La suma de los valores es:' + suma + '<br>');
+        }
+
+        function Elem36(Arr) {
+            var suma = 0;
+            for (var i = 0; i < Arr.length; i++) {
+                if (Arr[i] > 36) {
+                    suma += Arr[i];
+                }
+            }
+            alert('La suma de los valores mayores que 36 es:' + suma + '<br>');
+        }
+
+        function Val50(Arr) {
+            var cant = 0;
+            for (var i = 0; i < Arr.length; i++) {
+                if (Arr[i] > 50) {
+                    cant = cant + 1;
+                }
+            }
+            alert('Hay ' + cant + ' números mayores a 50');
+        }
+
+
+    </script>
+</body>
+
+</html>

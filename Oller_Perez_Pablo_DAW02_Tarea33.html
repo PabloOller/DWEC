@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTi-8">
+    <meta author="Pablo Oller Pérez">
+    <title>Ejercicio 33</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <p>Verificación del texto de 4 caracteres o más:</p>
+    <p id="sol"></p>
+    <script>
+        //Ejercicio 1
+        var str = prompt("Introduce un texto: ");
+        var patron = /\s?\w{4}\s?/;
+        if (patron.test(str)) {
+            document.getElementById("sol").innerHTML = "El texto es válido, tiene 4 o más caracteres";
+        } else {
+            document.getElementById("sol").innerHTML = "El texto no es válido, no tiene 4 o más caracteres";
+        }
+    </script>
+    <p>Validar si un string contiene 4 números de 3 dígitos cada uno separados por coma:</p>
+    <p id="sol2"></p>
+    <script>
+        //Ejercicio 2
+        var str = prompt("Introduce un texto: ");
+        var patron = /^\d{3}\,\d{3},\d{3}$/;
+        if (patron.test(str)) {
+            document.getElementById("sol2").innerHTML = str + " El texto es válido";
+        } else {
+            document.getElementById("sol2").innerHTML = str + " El texto no es válido";
+        }
+    </script>
+</body>
+
+</html>

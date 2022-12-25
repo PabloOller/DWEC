@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulacro Javascripto</title>
+</head>
+
+<body>
+    <h2>Ejercicio 1</h2>
+    <script>
+        //Ejercicio 1
+        
+        var n = parseInt(prompt("Dime un número: "));
+        var producto = n;
+        for (var i = n - 1; i >= 1; i--) {
+            producto *= i;
+        }
+        document.write("El resultado del factorial de " + n + " es: " + producto);
+        
+    </script>
+    <h2>Ejercicio 2</h2>
+    <script>
+        //Ejercicio 2
+        
+        var str1 = prompt("Dime una cadena: ");
+        var str2 = prompt("Dime otra cadena: ");
+        var c = prompt("Dime una letra: ");
+        c=c[0];
+        function controladorDeLetras(str1, str2, c) {
+            str1 = str1.toLowerCase();
+            str2 = str2.toLowerCase();
+            c = c.toLowerCase();
+            cont1 = 0;
+            cont2 = 0;
+            var textoLargo = "";
+            if (str1.length > str2.length) {
+                textoLargo = str1;
+            } else {
+                textoLargo = str2;
+            }
+            for (var i = 0; i < textoLargo.length; i++) {
+                if (str1[i] == c) {
+                    cont1++;
+                }
+                if (str2[i] == c) {
+                    cont2++;
+                }
+            }
+            if (cont1 > cont2) {
+                return "<br>" + str1;
+            } else if (cont1 == cont2) {
+                return "<br>" + str1 + "<br>" + str2;
+            } else{
+                return "<br>"+str2;
+            }
+        }
+
+        document.write("La cadena con más apariciones presentes de "+c+" es:"+controladorDeLetras(str1,str2,c));
+        
+    </script>
+    <h2>Ejercicio 3</h2>
+    <script>
+        //Ejercicio 3
+
+        var valores = [true, 5, false, "hola", "adios", 2];
+        var mayor = "";
+        var bool1;
+        var bool2;
+        var n1;
+        var n2;
+        
+        for (var i = 0; i < valores.length; i++) {
+            if (typeof valores[i] == "string") {
+                if (valores[i].length > mayor.length) {
+                    mayor = valores[i];
+                }
+            }
+            if(typeof valores[i] == "boolean"){
+                if(bool1==null){
+                bool1=valores[i];
+                }
+                else{
+                    bool2=valores[i];
+                }
+            }
+            if(typeof valores[i] == "number"){
+                if(n1==null){
+                n1=valores[i];
+                }
+                else{
+                    n2=valores[i];
+                }
+            }
+        }
+
+        document.write("El elemento array con mayor tamaño es " + mayor);
+        document.write("<br> Si la operación es AND el resultado es: "+(bool1*bool2));
+        document.write("<br> Si la operación es OR el resultado es: "+(bool1+bool2));
+        document.write("<br> Suma de"+n1+"+"+n2+": "+(n1+n2));
+        document.write("<br> Resta de"+n1+"-"+n2+": "+(n1-n2));
+        document.write("<br> Multiplicación de"+n1+"*"+n2+": "+(n1*n2));
+        document.write("<br> División de"+n1+"/"+n2+": "+(n1/n2));
+        document.write("<br> Potencia de"+n1+"^"+n2+": "+(n1**n2));
+
+    </script>
+    <h2>Ejercicio 4</h2>
+    <script>
+        
+        var str = "En un lugar de la Mancha          novela Cervantes";
+        var cont=1;
+        for (var i = 0;i<str.length;i++) {
+            if(str[i]==" "&&str[i+1]!=" "){
+                cont++;
+            }
+        }
+        document.write("Numero de palabras de la frase: "+cont);
+        
+    </script>
+    <h2>Ejercicio 5</h2>
+
+    <input type="checkbox" name="1" value="" onclick="presupuesto(50)"/> Quienes somos &nbsp;
+    <input type="checkbox" name="2" value="" onclick="presupuesto(50)"/> Donde estamos &nbsp;
+    <input type="checkbox" name="3" value="" onclick="presupuesto(50)"/> Galería de fotos &nbsp;
+    <input type="checkbox" name="4" value="" onclick="presupuesto(50)"/> e-Commerce &nbsp;<br /><br />
+    <input type="checkbox" name="5" value="" onclick="presupuesto(50)"/> Gestión interna &nbsp;
+    <input type="checkbox" name="6" value="" onclick="presupuesto(50)"/> Noticias &nbsp;
+    <input type="checkbox" name="7" value="" onclick="presupuesto(50)"/> Facebook &nbsp;
+    <input type="checkbox" name="8" value="" onclick="presupuesto(50)"/> Twitter &nbsp;<br /><br /><br />
+
+
+    SELECCIONA TIPO DE PAGINA:
+    <select name="precio"onchange="presupuesto(0)" id="option">
+        <option value="" selected></option>
+        <option name="9" value="" >Comercio</option>
+        <option name="10" value="" >Restaurantes y bares</option>
+        <option name="11" value="" >Gestorias</option>
+        <option name="12" value="" >Automovilismo</option>
+    </select><br><br />
+
+    Presupuesto estimado:<br />
+    <input type="text" name="total" id="precio" value="0" /> &nbsp;€
+    <script>
+        function presupuesto(n){
+            var total=document.getElementById("precio").value;
+            total=parseInt(total);
+            n=parseInt(n);
+            total+=n;
+            var opt = document.getElementById("option");
+            var elegido = opt.selectedIndex;
+            if(elegido == 1)
+            {
+                total+=300;
+            } else if(elegido == 2)
+            {
+                total+=350;
+            }
+            else if(elegido == 3)
+            {
+                total+=475;
+            }
+            else if(elegido == 4)
+            {
+                total+=350;
+            }
+            
+
+            document.getElementById("precio").value=total;
+        }
+        function eliminar(n){
+            var total=document.getElementById("precio").value;
+            total=parseInt(total);
+            n=parseInt(n);
+            total-=n;
+
+            document.getElementById("precio").value=total;
+        }
+        
+    </script>
+</body>
+
+</html>

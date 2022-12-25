@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 49</title>
+</head>
+
+<body>
+    <h1>Lista de compras</h1>
+    <ul id="lista"></ul>
+    <textarea id="producto" rows="2" cols="30"></textarea>
+    <input type="button" id="botón" value="Agregar !" onclick="agregar()">
+    <script>
+        function agregar() {
+            var code = "<li><input type='button' onclick='borrar(this);' value='Borrar Artículo'> " + document.getElementById("producto").value + "</li>";
+            var punto = document.createElement('li');
+            punto.innerHTML = code;
+            document.getElementById('lista').appendChild(punto);
+        }
+
+        function borrar(boton) {
+            var punto = boton.parentNode.parentNode;
+            document.getElementById('lista').removeChild(punto);
+        }
+    </script>
+</body>
+
+</html>

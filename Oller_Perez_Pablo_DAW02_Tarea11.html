@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta author="Pablo Oller Pérez">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 11</title>
+</head>
+
+<body>
+    <script>
+        //Ejercicio 1
+        var suma = 0;
+        var numero = 0;
+        var polaridad;
+        do {
+            numero = prompt("Escribe un numero ");
+            numero = parseInt(numero);
+
+            if (numero != 9999) {
+                suma += numero;
+            }
+        } while (numero != 9999);
+        if (suma > 0) {
+            polaridad = " y es mayor a 0";
+        } else if (suma == 0) {
+            polaridad = " y es igual a 0";
+        } else {
+            polaridad = " y es menor a 0";
+        }
+        document.write("<br>" + " La suma es " + suma + polaridad);
+
+    </script>
+    <br>
+    <br>
+    <script>
+        //Ejercicio 2
+        var AUX = 0;
+        var suma = 0;
+        do {
+            IBAN = prompt("Numero de cuenta: ");
+            IBAN = parseInt(IBAN);
+            if (IBAN >= 0) {
+                AUX = IBAN;
+                nombre = prompt("Nombre: ");
+                saldo = prompt("Saldo de la cuenta: ");
+                saldo = parseInt(saldo);
+                if (saldo > 0) {
+                    suma += saldo;
+                }
+            }
+        } while (IBAN >= 0);
+        if (saldo > 0) {
+            estado = " Acreedor";
+        } else if (suma == 0) {
+            estado = " Nulo";
+        } else {
+            estado = " Deudor";
+        }
+        document.write("<br>" + " El nombre es: " + nombre + "<br>" + " El IBAN es: " + AUX + "<br>" + " El estado es:" + estado);
+    </script>
+    <br>
+    <br>
+    <script>
+        //Ejercicio 6
+        var cont = 0;
+        var contVarones = 0;
+        var contMujeres = 0;
+        var contVar = 0;
+        var suma = 0;
+        do {
+            documento = prompt("Numero de documento: ");
+            documento = parseInt(documento);
+            if (documento != 0) {
+                sexo = prompt("Sexo: ");
+                sexo = sexo.toLowerCase();
+
+                edad = prompt("Edad: ");
+                edad = parseInt(edad);
+
+                if (sexo == "masculino") {
+                    ++contVarones;
+                    if (edad > 15 && edad < 66) {
+                        ++contVar;
+                    }
+                } else {
+                    ++contMujeres;
+                }
+                ++cont;
+            }
+        } while (documento != 0);
+        document.write("<br>" + " Personas censadas " + cont + "<br>" + " Cantidad de varones: " + contVarones + "<br>" + " Cantidad de mujeres: " + contMujeres + "<br>" + "Cantidad de varones cuya edad varía entre 16 y 65 años: " + contVar);
+    </script>
+
+</body>
+
+</html>

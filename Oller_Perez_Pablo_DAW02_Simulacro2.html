@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulacro Javascripto 2</title>
+</head>
+
+<body>
+    <h2>Ejercicio 1</h2>
+    <script>
+        //Ejercicio 1
+        var cont = 0;
+        var contP = 0;
+        var n = 1;
+        do {
+            for (var i = 1; i <= n; i++) {
+                if (n % i == 0) {
+                    cont++;
+                }
+            }
+            if (cont < 3) {
+                document.write(n + ", ");
+                contP++;
+            }
+            cont = 0;
+            n++;
+        } while (contP <= 100);
+    </script>
+    <h2>Ejercicio 2</h2>
+    <script>
+        //Ejercicio 2
+        
+        var cad = prompt("Dime una cadena de texto: ");
+        var cadMay = cad.toUpperCase();
+        var cadMin = cad.toLowerCase();
+
+        if(cad==cadMay){
+            document.write("La cadena está formada por mayúsculas");
+        } else if(cad==cadMin){
+            document.write("La cadena está formada por minúsculas");
+        } else {
+            document.write("La cadena es un a mezcla de mayúsculas y minúsculas");
+        }
+
+    </script>
+    <h2>Ejercicio 3</h2>
+    <script>
+        //Ejercicio 3
+        var Arr = [];
+        var contPar = 0;
+        var n = 1;
+        do {
+            if (n % 2 == 0) {
+                contPar++;
+                Arr.push(n);
+            }
+            n++;
+        } while (contPar <= 20);
+        for (var i = 0; i < Arr.length; i++) {
+            document.write(Arr[i] + ", ");
+        }
+    </script>
+    </script>
+    <h2>Ejercicio 4</h2>
+
+    <script>
+        var clasificaciones = ["Ana", "Oswaldo", "Raúl", "Celia", "María", "Antonio"];
+        for (var i = 0; i < clasificaciones.length; i++) {
+            document.write((i + 1) + "º " + clasificaciones[i] + ", ");
+        }
+        
+        var aux = clasificaciones[clasificaciones.indexOf("Celia")];
+        clasificaciones[clasificaciones.indexOf("Celia")] = clasificaciones[clasificaciones.indexOf("Raúl")];
+        clasificaciones[clasificaciones.indexOf("Raúl")] = aux;
+
+        clasificaciones.pop();
+        
+        clasificaciones.splice(1, 0, "Roberto", "Amaya");
+        
+        clasificaciones.unshift("Marta");
+
+        document.write("<br>");
+        for (var i = 0; i < clasificaciones.length; i++) {
+            document.write((i + 1) + "º " + clasificaciones[i] + ", ");
+        }
+
+    </script>
+</body>
+
+</html>

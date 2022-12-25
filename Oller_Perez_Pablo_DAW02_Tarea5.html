@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta author="Pablo Oller Pérez">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+</head>
+
+<body>
+    <script>
+        //Parte 1
+
+        let a = prompt("Ingresa un numero");
+        let b = prompt("Ingresa el segundo numero");
+        let c = prompt("Ingresa el tercer numero");
+
+        a = parseInt(a);
+        b = parseInt(b);
+        c = parseInt(c);
+
+        if (a > b && a > c) {
+            document.write("<br>" + "El mayor es " + a + "<br>");
+        } else if (b > a && b > c) {
+            document.write("<br>" + "El mayor es " + b + "<br>");
+        } else {
+            document.write("<br>" + "El mayor es " + c + "<br>");
+        }
+    </script>
+
+    <script>
+        //Parte 2
+        let A = prompt("Ingresa un numero para saber su polaridad");
+
+        A = parseInt(A);
+
+        if (A > 0) {
+            document.write("<br>" + "Positivo");
+        } else if (A == 0) {
+            document.write("<br>" + "Es cero");
+        }
+        else {
+            document.write("<br>" + "Negativo");
+        }
+    </script>
+
+
+    <script>
+        //Parte 3
+
+        let x = prompt("Ingresa una numero para saber cuantos digitos tiene");
+        x = parseInt(x);
+
+
+        if (x < 1000 && x > 0) {
+            if (x > 9 && x < 100) {
+                document.write("<br>" + "el numero es de 2 digitos" + "<br>");
+            }
+            else if (x > 100 && x < 1000) {
+                document.write("<br>" + "el numero es de 3 digitos" + "<br>");
+            }
+            else {
+                document.write("<br>" + "el numero es de 1 digito" + "<br>");
+            }
+        }
+        else {
+            document.write("<br>" + "mayor que 999 o menor que 1" + "<br>");
+        }
+    </script>
+    <script>
+        //Parte 4
+
+        let nombre = prompt("Ingresa el nombre del aspirante");
+        let preguntas = prompt("Ingresa las preguntas totales");
+        let aciertos = prompt("Ingresa las preguntas acertadas");
+
+        preguntas = parseInt(preguntas);
+        aciertos = parseInt(aciertos);
+        var porcentaje = 100 * aciertos / preguntas;
+
+        if (porcentaje >= 90) {
+            document.write("<br>" + "Nivel superior " + a + "<br>");
+        } else if (porcentaje >= 75 && porcentaje < 90) {
+            document.write("<br>" + "Nivel medio " + b + "<br>");
+        } else if (porcentaje >= 50 && porcentaje < 75) {
+            document.write("<br>" + "Nivel regular " + b + "<br>");
+        }
+        else {
+            document.write("<br>" + "Fuera de nivel " + c + "<br>");
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulacro Javascripto 3</title>
+
+</head>
+
+<body>
+    <h2>Ejercicio 1</h2>
+    <script>
+        //Ejercicio 1
+        /*    var n = parseInt(prompt("Dime un número: "));
+            function pasarBinario(n) {
+                return (n).tocading(2);
+            }
+            document.write("El número queda convertido en: " + pasarBinario(n));
+    */
+    </script>
+    <h2>Ejercicio 2</h2>
+    <form>
+        <label for="cadena">Escribe una cadena: </label>
+        <input type="text" id="cadena">
+        <input type="button" value="Pulsar" onclick="cadenas()">
+    </form>
+    <script>
+        //Ejercicio 2
+        function cadenas() {
+            cad = document.getElementById("cadena").value;
+            var Arr = [];
+            Arr = cad.split(" ");
+            var n = Arr.length
+            document.write("<br> Numero de palabras: " + Arr.length);
+            document.write("<br> Primera palabra: " + Arr[0]);
+            document.write("<br> Última palabra: " + Arr[Arr.length - 1]);
+            document.write("<br> Palabras en orden inverso: " + Arr.reverse().join(" "));
+            document.write("<br> Palabras ordenadas de la A a la Z: " + Arr.sort().join(" "));
+            document.write("<br> Palabras ordenadas de la Z a la A: " + Arr.sort().reverse().join(" "));
+        }
+    </script>
+    <h2>Ejercicio 3</h2>
+
+    <script>
+        //Ejercicio 3
+        /*  var cad = prompt("Dime una cadena: ");
+          function palindromo(cad) {
+              cad = cad.toLowerCase().replace(/[\W_]/g, '');
+              for (var i = 0; i < cad.length / 2; i++) {
+                  if (cad[i] != cad[cad.length - (i+1)]) {
+                      return false;
+                  }
+              }
+              return true;
+          }
+          if (palindromo(cad)) {
+              document.write("Es palindromo");
+          } else {
+              document.write("No es palindromo");
+          }*/
+    </script>
+    </script>
+    <h2>Ejercicio 4</h2>
+    <img onmouseover="cambiarImagen(this)" onmouseout="resetear(this)" src="https://educacionadistancia.juntadeandalucia.es/centros/malaga/pluginfile.php/673448/assignsubmission_file/submission_files/306465/imgs/quandale.jpg" />
+    <script>
+        //Ejercicio 4
+        function cambiarImagen(x) {
+            x.src = 'imgs/speed.jpg';
+        }
+
+        function resetear(x) {
+            x.src = 'imgs/quandale.jpg';
+        }
+    </script>
+
+    <h2>Ejercicio 5</h2>
+
+    <script>
+        //Ejercicio 5
+        var cad = prompt("Dime una cadena: ");
+        var Abecedario = "a b c d e f g h i j k l m n ñ o p q r s t u v w x y z".split(" ");
+        var Contador = [];
+        var cont = 0;
+        function estadisticas(cad) {
+            cad = cad.toLowerCase();
+            for (var i = 0; i < Abecedario.length; i++) {
+                for (var j = 0; j < cad.length; j++) {
+                    if (Abecedario[i] == cad[j]) {
+                        cont++;
+                    }
+                }
+                Contador.push(cont);
+                cont = 0;
+            }
+            for (var i = 0; i < Abecedario.length; i++) {
+                document.write("<br> La letra " + Abecedario[i] + " aparece " + Contador[i] + " veces");
+            }
+            return "";
+        }
+        document.write(estadisticas(cad));
+    </script>
+    <h2>Ejercicio 6</h2>
+
+    <script>
+        //Ejercicio 6
+
+        var Abecedario = "A B C D E F G H I J K L M N Ñ O P Q R S T U V W X Y Z".split(" ");
+        var str = "";
+        var n = 0;
+        do {
+            n = parseInt(prompt("Dime un número: "));
+            if (n > 26 || n < -1) {
+                alert("Error, inserte otro numero");
+            } else if (n == -1) {
+                alert("Fin");
+            } else {
+                str += Abecedario[n];
+                alert("Añadirá la '" + Abecedario[n] + "'");
+            }
+
+        } while (n != -1)
+        document.write("Cadena resultante: " + str);
+    </script>
+</body>
+
+</html>

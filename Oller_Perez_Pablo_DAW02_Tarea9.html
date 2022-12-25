@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta author="Pablo Oller Pérez">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9</title>
+</head>
+
+<body>
+    <script>
+        //Ejercicio 1
+
+        document.write("25 primeros términos de 11: " + "<br>");
+        var cont = 1;
+        while (cont <= 25) {
+            if (cont == 25) {
+                document.write((11 * cont));
+            } else {
+                document.write((11 * cont) + " - ");
+            }
+            cont++
+        }
+
+    </script>
+    <br>
+    <br>
+    <script>
+        //Ejercicio 2
+
+        document.write("Múltiplos de 8 hasta 500: " + "<br>");
+        var cont = 1;
+        var multiplo = 8;
+        while ((8 * cont) <= 500) {
+            multiplo = 8 * cont
+            if (multiplo == 496) {
+                document.write(multiplo);
+            } else {
+                document.write(multiplo + " - ");
+            }
+
+            cont++
+        }
+
+    </script>
+</body>
+
+</html>

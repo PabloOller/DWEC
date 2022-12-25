@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 44</title>
+</head>
+
+<body>
+    <ul>
+        <li id="o1"></li>
+        <li id="o2"></li>
+        <li id="o3"></li>
+    </ul>
+    <input type="button" value="Soluciones" onclick="aniadir()">
+    <script>
+        function aniadir() {
+            var sus;
+            var amonguseto;
+            sus = document.createTextNode('amongus');
+            amonguseto = document.getElementById('o1');
+            amonguseto.appendChild(sus);
+            sus = document.createTextNode('donpollo');
+            amonguseto = document.getElementById('o2');
+            amonguseto.appendChild(sus);
+            sus = document.createTextNode('madeinohio');
+            amonguseto = document.getElementById('o3');
+            amonguseto.appendChild(sus);
+        }
+    </script>
+    <p id="p1">Texto inicial:</p>
+    <input type="button" value="añadir nodo de texto" onclick="aniadir()">
+    <input type="button" value="Eliminar nodo de texto" onclick="eliminar()">
+    <script>
+        var cont = 1;
+
+        function aniadir() {
+            var liluzi = document.createTextNode('Nuevo texto ' + cont + '-');
+            var np1 = document.getElementById('p1');
+            np1.appendChild(nt);
+            cont++;
+        }
+
+        function eliminar() {
+            var np1 = document.getElementById('p1');
+            if (np1.hasChildNodes()) {
+                np1.removeChild(np1.firstChild);
+                cont--;
+            }
+        }
+    </script>
+    <ul id="lista">
+    </ul>
+    <input type="button" value="agregar (li)" onclick="aniadir()">
+    <script>
+        function aniadir() {
+            var liluzi;
+            var amongus;
+            var elemento;
+            amongus = document.getElementById('lista');
+            if (amongus.children.length != 0) {
+                return;
+
+                elemento = document.createElement('li');
+                liluzi = document.createTextNode('Resp 1');
+                elemento.appendChild(liluzi);
+
+                amongus.appendChild(elemento);
+
+                elemento = document.createElement('li');
+                liluzi = document.createTextNode('Resp 2');
+                elemento.appendChild(liluzi);
+
+                amongus.appendChild(elemento);
+            }
+        }
+    </script>
+    <div id="position">
+        <p>Posicion 0</p>
+        <p>Posicion 1</p>
+        <p>Posicion 2</p>
+    </div>
+    <input type="text" id="posicion" name="posicion">
+    <input type="button" value="Eliminar el párrafo de la posición ingresada" onclick="eliminar2()">
+    <script>
+        function eliminar2() {
+            var pointer = document.getElementById('position');
+            var n = document.getElementById('posicion').value;
+            if (n < pointer.children.length){
+                pointer.removeChild(pointer.children[n]);
+            }
+        }
+    </script>
+</body>
+
+</html>

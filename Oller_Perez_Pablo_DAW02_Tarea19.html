@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta author="Pablo Oller Pérez">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 18</title>
+</head>
+
+<body>
+    <script>
+        function funcion() {
+            var opcion = document.getElementById("procesador").options[document.getElementById("procesador").selectedIndex].text;
+            var precio = document.getElementById("procesador").options[document.getElementById("procesador").selectedIndex].value;
+            var opcion2 = document.getElementById("monitor").options[document.getElementById("monitor").selectedIndex].text;
+            var precio2 = document.getElementById("monitor").options[document.getElementById("monitor").selectedIndex].value;
+            var opcion3 = document.getElementById("discoDuro").options[document.getElementById("discoDuro").selectedIndex].text;
+            var precio3 = document.getElementById("discoDuro").options[document.getElementById("discoDuro").selectedIndex].value;
+            precio = parseInt(precio);
+            precio2 = parseInt(precio2);
+            precio3 = parseInt(precio3);
+            document.write("La opción deseada de procesador es " + opcion + " y vale " + precio + " €");
+            document.write("<br> La opción deseada de monitor es " + opcion2 + " y vale " + precio2 + " €");
+            document.write("<br> La opción deseada de disco duro es " + opcion3 + " y vale " + precio3 + " €");
+            document.write("<br> En total el presupuesto sale por " + (precio + precio2 + precio3) + " €");
+        }
+    </script>
+    <form>
+        <h1>Configuración del ordenador</h1>
+        <p>Seleccione el procesador: </p>
+        <select id="procesador">
+            <option value="400">Intel I3</option>
+            <option value="600">Intel I5</option>
+            <option value="800">Intel I7</option>
+        </select>
+        <br>
+        <p>Seleccione el monitor: </p>
+        <select id="monitor">
+            <option value="250">Samsung 20'</option>
+            <option value="350">Samsung 22'</option>
+            <option value="550">Samsung 26'</option>
+        </select>
+        <p>Seleccione el disco duro: </p>
+        <select id="discoDuro">
+            <option value="300">500 GB</option>
+            <option value="440">1 TB</option>
+            <option value="500">3 TB</option>
+        </select>
+        <br>
+        <br>
+        <input type="button" value="CALCULAR" onclick="funcion()">
+
+    </form>
+</body>
+
+</html>

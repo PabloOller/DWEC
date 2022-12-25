@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta author="Pablo Oller Pérez">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 53</title>
+
+</head>
+
+<body>
+    <button id="1" onclick="alerta(event)">Botón 1</button>
+    <button id="2" onclick="alerta(event)">Botón 2</button>
+    <button id="3" onclick="alerta(event)">Botón 3</button>
+    <script>
+        function alerta(n) {
+            alert("Has pulsado el botón " + event.target.id);
+            switch (event.target.id) {
+                case "1": document.bgColor = "red"; break;
+                case "2": document.bgColor = "blue"; break;
+                case "3": document.bgColor = "green"; break;
+
+            }
+        }
+    </script>
+</body>
+
+</html>

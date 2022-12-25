@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 46</title>
+</head>
+
+<script>
+
+    function aniadir() {
+    var codigoFila="<td>" + document.getElementById("txtcaja").value + "</td><td><input type='button' onclick='copiarEncima(this);' value='Copiar encima'/></td><td><input type='button' onclick='borrar(this);' value='Borrar'/></td>";
+    var fila=document.createElement('tr');
+    fila.innerHTML=codigoFila;
+    document.getElementById('tabla').appendChild(fila);  
+    }
+   
+    function borrar(boton) {
+    var fila=boton.parentNode.parentNode;
+    document.getElementById('tabla').removeChild(fila);
+    }
+   
+    function copiarEncima(boton) {
+        var fila=boton.parentNode.parentNode;
+        document.getElementById('tabla').insertBefore(fila.cloneNode(true),fila);
+    }
+function reemplazarCaja(){
+
+    var tabla = document.getElementById("tabla");
+    var texto1 = tabla.childNodes[0].childNodes[0].innerHTML;
+    var textoCopia=texto1;
+
+    text2=document.getElementById("txtcaja").value;
+    tabla.childNodes[0].childNodes[0].innerHTML=text2;
+}
+
+function reemplazar(){
+var tabla = document.getElementById("tabla");
+
+var fila1 = tabla.childNodes[0];
+var fila1Copia = fila1;
+
+var filaFinal = tabla.lastChild;
+
+tabla.replaceChild(filaFinal,fila1);
+tabla.appendChild(fila1Copia);
+       
+    }
+    </script>
+
+   
+
+</head>
+<body>
+
+
+<input id="txtcaja" type="text" id="txtColor">
+<input type="button" onclick="aniadir();" value="Insertar texto nuevo" />
+<input type="button" onclick="reemplazarCaja();" value="Reemplazar primer elemento" />
+<input type="button" onclick="reemplazar();" value="Cambiar primer elemento y ultimo" />
+<table id="tabla" style="border:1 px dashed rgb(49, 46, 218);"></table>
+
+
+</body>
+
+</html>

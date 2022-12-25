@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta author="Pablo Oller Pérez">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 13</title>
+</head>
+
+<body>
+    <script>
+        //Ejercicio 1
+        let secuencia = (a, b) => {
+            for (var i = a; i <= b; i++) {
+                document.write(i + " ");
+            }
+        }
+        var a = prompt("Dime el menor:");
+        var b = prompt("Dime el mayor:");
+        a = parseInt(a);
+        b = parseInt(b);
+        secuencia(a, b);
+    </script>
+    <br>
+    <br>
+    <script>
+        //Ejercicio 2
+        let menor = (a, b, c) => {
+            var menor = a;
+            if (b < a && b < c) {
+                menor = b;
+            }
+            if (c < a && b > c) {
+                menor = c;
+            }
+            document.write("<br>El menor es el: " + menor);
+        }
+        var a = prompt("Dime el primer numero:");
+        var b = prompt("Dime el segundo numero:");
+        var c = prompt("Dime el tercer numero:");
+        a = parseInt(a);
+        b = parseInt(b);
+        c = parseInt(c);
+        menor(a, b, c);
+    </script>
+    <br>
+    <br>
+    <script>
+        //Ejercicio 3
+        let ordenar = (a, b, c) => {
+            if (b < a && b < c) {
+                if(a<c){
+                    ordenado=a+", "+a+", "+c;
+                }else{
+                    ordenado=a+", "+c+", "+a;
+                }
+            }
+            if (b > a && a < c) {
+                if(b<c){
+                    ordenado=a+", "+b+", "+c;
+                }else{
+                    ordenado=a+", "+c+", "+b;
+                }
+            }
+            if (c < a && b > c) {
+                if(b<a){
+                    ordenado=c+", "+b+", "+a;
+                }else{
+                    ordenado=c+", "+a+", "+b;
+                }
+            }
+            document.write("<br>Ordenacion: " + ordenado);
+        }
+        var a = prompt("Dime el primer numero:");
+        var b = prompt("Dime el segundo numero:");
+        var c = prompt("Dime el tercer numero:");
+        a = parseInt(a);
+        b = parseInt(b);
+        c = parseInt(c);
+        ordenar(a, b, c);
+    </script>
+    <br>
+    <br>
+</body>
+
+</html>

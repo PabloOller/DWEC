@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta author="Pablo Oller Pérez">
+    <title>Ejercicio 20</title>
+
+</head>
+
+<body>
+
+    <form>
+        <p>Pizzas:</p>
+        <p>
+            <select id="pizza">
+                <option value="4">Queso</option>
+                <option value="6">Jamon y Queso</option>
+                <option value="10">Especial</option>
+            </select>
+        </p>
+        <p><input type="text" id="cantidad" placeholder="cantidad de pizzas a ordenar" value=""></p>
+        <input type="button" value="CALCULAR PRECIO" onclick="calcularPrecio()">
+        <p><input type="text" id="salida" placeholder="total a pagar"></p>
+    </form>
+
+    <script>
+        function calcularPrecio() {
+
+            var precio = document.getElementById('pizza').options[document.getElementById('pizza').selectedIndex].value;
+            var cant = document.getElementById('cantidad').value;
+            precio = parseInt(precio);
+            cant = parseInt(cant);
+            var total = cant * precio;
+            document.getElementById('salida').value = total + "€";
+        }
+    </script>
+
+</body>
+
+</html>

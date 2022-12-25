@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta author="Pablo Oller Pérez">
+    <title>Ejercicio 24</title>
+
+</head>
+
+<body>
+    <!--Ejercicio1-->
+    <h3>Ejercicio 1</h3>
+    <form>
+        <p>Dime tu nombre:</p>
+        <input type="text" id="nombre">
+        <p> Dime tu correo electrónico:</p>
+        <input type="text" id="correo">
+        <p> Comentarios:</p>
+        <textarea id="comentarios" rows="10" cols="40"></textarea><br>
+        <input type="button" value="enviar" onclick="comprobar()">
+    </form>
+
+    <script>
+        function comprobar() {
+            var nombre = document.getElementById('nombre').value;
+            var correo = document.getElementById('correo').value;
+            var comentarios = document.getElementById('comentarios').value;
+            var total = nombre + ", " + correo + ", " + comentarios;
+            alert(total);
+        }
+    </script>
+    <!--Ejercicio2-->
+    <h3>Ejercicio 2</h3>
+    <form>
+        Usuario:<br>
+        <input type="text" id="usuario">
+        <br>
+        contraseña:<br>
+        <input type="password" id="contraseña" onBlur="comprobar(this)">
+        <br>
+        <input type="button" value="comprobar">
+    </form>
+
+    <script>
+        function comprobar(control) {
+            if (control.value.length < 7) {
+                alert('Tiene que ser mayor o igual de 7 caracteres');
+            } if (control.value.length > 20) {
+                alert('Tiene que ser menor o igual de 20 caracteres');
+            }
+        }
+    </script>
+    <!--Ejercicio3-->
+    <h3>Ejercicio 3</h3>
+    <div><a href="" onmouseover="rojo(this)">Rojo - </a>
+        <a href="" onmouseover="verde(this)">Verde - </a>
+        <a href="" onmouseover="azul(this)">Azul</a>
+    </div>
+    <div id="panel" style="width: 400px;height: 400px;" onmouseout="negro(this)"></div>
+    <script>
+        function rojo(control) {
+            var cambiarColor = document.getElementById("panel").style.backgroundColor="red";
+        }
+        function verde(control) {
+            var cambiarColor = document.getElementById("panel").style.backgroundColor="green";
+        }
+        function azul(control) {
+            var cambiarColor = document.getElementById("panel").style.backgroundColor="blue";
+        }
+        function negro(control){
+            var cambiarColor = document.getElementById("panel").style.backgroundColor="black";
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta author="Pablo Oller Pérez">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 54</title>
+
+</head>
+
+<body>
+    <select name="selec" id="selector" onchange="texto()">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+
+    </select>
+    <br>
+    <br>
+    <form id="formulario">
+        <input type="submit" name="" id="submit" value="Registrar">
+    </form>
+
+    <script>
+        function texto() {
+            var select = document.getElementById("selector");
+            var opcion = select.options[select.selectedIndex];
+            
+            var form = document.getElementById("formulario");
+
+            var submit = document.getElementById("submit");
+
+            while(form.hasChildNodes())
+            {
+                form.removeChild(form.firstChild)
+            }
+
+            form.appendChild(submit)
+            for(var i = 0; i < opcion.value; i++)
+            {
+                var input = document.createElement("input");
+                var br = document.createElement("br");
+                input.setAttribute("type","text");
+                form.insertBefore(input,submit);
+                form.insertBefore(br,submit)
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulacro Javascripto 3</title>
+    <style>
+        .contenedor {
+            display: flex;
+        }
+
+        .cuadrado {
+            border: solid 1px black;
+            height: 20px;
+            width: 20px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Ejercicio 1</h2>
+    <script>
+        
+        //Ejercicio 1
+        var n = parseInt(prompt("Dime un numero: "));
+        patron=/^[0-1]/;
+        if(patron.test(n)){
+            document.write("El número es binario");
+        } else{
+            document.write("El número no es binario");
+        }
+        
+    </script>
+    <h2>Ejercicio 2</h2>
+    <script>
+        //Ejercicio 2
+        
+        cont = 0;
+        var cad = prompt("Dime un texto: ");
+        var letra = prompt("Dime una letra: ");
+        letra = letra[0];
+        function contadorDeLetras(c, l) {
+            for (var i = 0; i < c.length; i++) {
+                if (c[i] == l) {
+                    cont++;
+                }
+            }
+            return cont;
+        } 
+        document.write("El número de veces que ha salido la letra es: " + contadorDeLetras(cad, letra));
+       
+    </script>
+    <h2>Ejercicio 3</h2>
+    <div class="contenedor">
+        <div class="cuadrado" style="background-color: red;" onmouseover="cambiarColor('red')"></div>
+
+        <div class="cuadrado" style="background-color: greenyellow;" onmouseover="cambiarColor('greenyellow')"></div>
+
+        <div class="cuadrado" style="background-color: blue;" onmouseover="cambiarColor('blue')"></div>
+
+        <div class="cuadrado" style="background-color: deeppink;" onmouseover="cambiarColor('deeppink')"></div>
+
+        <div class="cuadrado" style="background-color: brown;" onmouseover="cambiarColor('brown')"></div>
+
+        <div class="cuadrado" style="background-color: white;" onmouseover="cambiarColor('white')"></div>
+
+    </div>
+    <script>
+        //Ejercicio 3
+        function cambiarColor(color) {
+            document.body.style.backgroundColor = color;
+        }
+    </script>
+    </script>
+    <h2>Ejercicio 4</h2>
+
+    <script>
+        //Ejercicio 4
+        
+        function reemplazarCadena(cad1, cad2, cad3) {
+            cad1 = cad1.replaceAll(cad2, cad3);
+            return cad1;
+        }
+        cadena = prompt("Dime la cadena entera:");
+        palabraRemplazada = prompt("Dime la palabra a reemplazar:");
+        palabraNueva = prompt("Dime la palabra nueva:");
+
+        document.write("La cadena queda así: " + reemplazarCadena(cadena, palabraRemplazada, palabraNueva));
+    </script>
+
+    <h2>Ejercicio 5</h2>
+    <form action="">
+        <select id="opcion">
+        </select>
+    </form>
+    <input type="button" value="Añadir" onclick="aniadir()">
+    <input type="button" value="Modificar" onclick="modificar()">
+    <input type="button" value="Eliminar" onclick="eliminar()">
+
+    <script>
+        //Ejercicio 5
+        function aniadir() {
+            var cad = new Option(prompt("Inserta cualquier cosa:"));
+            document.getElementById("opcion").options.add(cad);
+        }
+        function modificar() {
+            seleccionar = document.getElementById("opcion");
+            var cad = prompt("Inserta cualquier cosa:");
+            seleccionar.options[seleccionar.selectedIndex].text= cad;
+        }
+        function eliminar() {
+            seleccionar = document.getElementById("opcion");
+            seleccionar.remove(seleccionar.selectedIndex);
+        }
+    </script>
+</body>
+
+</html>

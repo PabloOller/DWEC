@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 43</title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td id="n1">1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+    </table>
+    <input type="button" value="mostrar primera fila" onClick="mostrarFila()">
+    <script>
+        function mostrarFila() {
+            var pointer = document.getElementById('n1');
+            while (pointer != null) {
+                alert(pointer.childNodes[0].nodeValue);
+                pointer = pointer.nextElementSibling;
+            }
+        }
+    </script>
+    <div id="parrafos">
+        <p>Este es el primer párrafo</p>
+        <p>Este es el segundo párrafo</p>
+        <p>Este es el tercer párrafo</p>
+    </div>
+    <input type="button" value="accediendo a los tres párrafos" onClick="parrafoAnterior()">
+    <script>
+        function parrafoAnterior() {
+            var pointer1 = document.getElementById('parrafos');
+            var pointer2 = pointer1.lastElementChild;
+            while (pointer2 != null) {
+                alert(pointer2.childNodes[0].nodeValue);
+                pointer2 = pointer2.previousElementSibling;
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 39</title>
+</head>
+
+<body>
+    <script>
+        class Persona {
+            constructor(nombre, edad) {
+                this.nombre = nombre;
+                if (edad > 0) {
+                    this.edad = edad;
+
+                } else {
+                    while (edad < 0) {
+                        alert("no puedes introducir un numero negativo. ");
+                        edad = parseInt(prompt("Edad: "));
+                    }
+                    this.edad = edad;
+
+                }
+            }
+            get Nombre() {
+                return this.nombre;
+            }
+            get Edad() {
+                return this.edad;
+            }
+            set NuevoNombre(nombre) {
+                this.language = NuNombre;
+            }
+            set NuevaEdad(edad) {
+                if (edad > 0) {
+                    this.edad = edad;
+                } else {
+                    while (edad < 0) {
+                        alert("no puedes introducir un numero negativo. ");
+                        edad = parseInt(prompt("Edad: "));
+                    }
+                    this.edad = edad;
+
+                }
+                this.language = NuEdad;
+            }
+        }
+
+        var nombre = prompt("Dime tu nombre: ");
+        var edad = parseInt(prompt("Dime tu edad: "));
+        let persona1 = new Persona(nombre, edad);
+
+        document.write("El nombre de la persona es:" + persona1.Nombre);
+        document.write("<br> La edad de la persona es:" + persona1.Edad);
+        function cambiar() {
+            nombre = prompt("Dime tu nuevo nombre: ");
+            edad = parseInt(prompt("Dime tu nueva edad: "));
+
+            persona1.NuevoNombre(nombre);
+            persona1.NuevaEdad(edad);
+        }
+    </script>
+    <form>
+        <input type="submit" id="Cambiar" value="Cambiar" onclick="cambiar()">
+    </form>
+</body>
+
+</html>

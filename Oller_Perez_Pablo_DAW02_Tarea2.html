@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta author="Pablo Oller Pérez">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios 1 y 2</title>
+</head>
+
+<body>
+    <script>
+        //Parte 1
+        let n1 = prompt("Introduce la primera nota");
+        let n2 = prompt("Introduce la primera nota");
+        let n3 = prompt("Introduce la primera nota");
+        n1 = parseFloat(n1);
+        n2 = parseFloat(n2);
+        n3 = parseFloat(n3);
+        document.write("<br>" + "La nota promedio es: " + ((n1 + n2 + n3) / 3) + "<br>");
+    </script>
+    <script>
+        //Parte 2
+        let str1 = prompt("Ingresa la contraseña");
+        let str2 = prompt("Repite la contraseña");
+        if (str1 == str2) {
+            document.write("Las contraselas son iguales");
+        } else {
+            document.write("Las contraselas son distintas");
+        }
+    </script>
+</body>
+
+</html>

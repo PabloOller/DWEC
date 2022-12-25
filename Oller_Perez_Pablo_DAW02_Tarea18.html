@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta author="Pablo Oller Pérez">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 18</title>
+</head>
+
+<body>
+    <script>
+        function funcion() {
+            var opcion = document.getElementById("pizza").options[document.getElementById("pizza").selectedIndex].text;
+            var precio = document.getElementById("pizza").options[document.getElementById("pizza").selectedIndex].value;
+            document.write("La opcion deseada de pizza es " + opcion + " y vale " + precio + " €");
+        }
+    </script>
+    <form>
+        <select id="pizza">
+            <option value="3.5">Jamon y Queso</option>
+            <option value="2.9">Mozzarella</option>
+            <option value="2.7">Morrones</option>
+        </select>
+        <input type="button" value="SELECT" onclick="funcion()">
+
+    </form>
+</body>
+
+</html>

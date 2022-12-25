@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta author="Pablo Oller Pérez">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 55</title>
+    <style>
+        table,
+        tr,
+        td {
+            border: 1px dashed;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Año 2021</h1>
+    <table class="tabla" id="t1">
+        <tr>
+            <td>Empleado</td>
+            <td>Sueldo</td>
+        </tr>
+        <tr>
+            <td>juan</td>
+            <td>1200</td>
+        </tr>
+        <tr>
+            <td>ana</td>
+            <td>1900</td>
+        </tr>
+        <tr>
+            <td>luis</td>
+            <td>1500</td>
+        </tr>
+    </table class="tabla">
+
+    <h1>Año 2022</h1>
+    <table class="tabla" id="t2">
+        <tr>
+            <td>Empleado</td>
+            <td>Sueldo</td>
+        </tr>
+        <tr>
+            <td>juan</td>
+            <td>1200</td>
+        </tr>
+        <tr>
+            <td>ana</td>
+            <td>1900</td>
+        </tr>
+        <tr>
+            <td>luis</td>
+            <td>1500</td>
+        </tr>
+    </table class="tabla">
+    <br>
+    <button onclick="cambiar()">Cambiar</button>
+    <script>
+        function cambiar() {
+            document.getElementById('t1').style.backgroundColor = "yellow";
+
+            document.getElementById('t2').style.backgroundColor = "orange";
+        }
+    </script>
+</body>
+
+</html>

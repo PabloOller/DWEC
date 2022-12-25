@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta author="Pablo Oller Pérez">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 51</title>
+</head>
+
+<body>
+    <ul id="parte1">
+        <li>Opción 1.</li>
+        <li>Opción 2.</li>
+        <li>Opción 3.</li>
+    </ul>
+    <input type="button" name="Mover" id="boton" value="Mover elemento" onclick="moverElementos()">
+    <ul id="parte2">
+    </ul>
+    <div id="lebronJames">
+        <a href="">Enlace 1</a>
+        <br>
+        <a href="">Enlace 2</a>
+        <br>
+        <a href="">Enlace 3</a>
+    </div>
+    <input type="button" name="Clonar" id="boton" value="Clonar nodos" onclick="ClonarNodos()">
+    <div id="metroboomin"></div>
+    <script>
+        function moverElementos(){
+            var div1 = document.getElementById('parte1');
+            var div2 = document.getElementById('parte2');
+            div2.appendChild(div1.firstElementChild);
+            div1.removeChild(div1.firstChild);
+        }
+        function ClonarNodos(){
+            var div1 = document.getElementById('lebronJames');
+            var div2 = document.getElementById('metroboomin');
+            var nodo = div1.cloneNode(true);
+            div2.appendChild(nodo);
+        }
+    </script>
+</body>
+
+</html>

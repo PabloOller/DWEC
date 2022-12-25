@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta author="Pablo Oller Pérez">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+</head>
+
+<body>
+    <script>
+        //Parte 1
+        let N = prompt("Introduce un numero");
+        let M = prompt("Introduce otro numero");
+        N = parseFloat(N);
+        M = parseFloat(M);
+        if (N > M) {
+            document.write("<br>" + "La suma es: " + (N + M) + "<br>");
+            document.write("La resta es: " + (N - M) + "<br>");
+        } else {
+            document.write("<br>" + "El producto es: " + (N * M) + "<br>");
+            document.write("La división es es: " + (N / M) + "<br>");
+        }
+
+    </script>
+    <script>
+        //Parte 2
+        let A = prompt("Ingresa un numero");
+
+        A = parseInt(A);
+
+        if (A % 5 == 0) {
+            document.write("Múltiplo de 5");
+        } else {
+            document.write("No es multiplo de 5");
+        }
+    </script>
+
+    <script>
+        //Parte 3
+
+        let a = prompt("Ingresa una nota");
+        let b = prompt("Ingresa la segunda nota");
+        let c = prompt("Ingresa la tercera nota");
+
+        a = parseInt(a);
+        b = parseInt(b);
+        c = parseInt(c);
+
+        if (((a + b + c) / 3) > 5) {
+            document.write("<br>" + "APTO" + "<br>");
+        } else {
+            document.write("<br>" + "No Apto" + "<br>");
+        }
+    </script>
+    <script>
+        //Parte 4
+
+        let x = prompt("Ingresa una numero");
+        x = parseInt(x);
+
+
+        if (x < 100 && x > 0) {
+            if (x > 9) {
+                document.write("<br>" + "el numero de 2 digitos" + "<br>");
+            }
+            else {
+                document.write("<br>" + "el numero de 1 digito" + "<br>");
+            }
+        }
+        else {
+            document.write("<br>" + "mayor que 99 o menor que 1" + "<br>");
+        }
+    </script>
+</body>
+
+</html>

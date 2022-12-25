@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta author="Pablo Oller Pérez">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6</title>
+</head>
+
+<body>
+    <script>
+        //Parte 1
+
+        let a = prompt("Ingresa un numero");
+        let b = prompt("Ingresa el segundo numero");
+        let c = prompt("Ingresa el tercer numero");
+
+        a = parseInt(a);
+        b = parseInt(b);
+        c = parseInt(c);
+
+        if (10 > b || 10 > c || 10 > a) {
+            document.write("<br>" + "Alguno de los números es menor a 10" + "<br>");
+        } else {
+            document.write("<br>" + "Todos los numeros son mayores de 10 " + "<br>");
+        }
+    </script>
+    <script>
+        //Parte 2
+
+        let dia = prompt("Ingresa un dia");
+        let mes = prompt("Ingresa un mes");
+        let anio = prompt("Ingresa un año");
+
+        dia = parseInt(dia);
+        mes = parseInt(mes);
+        anio = parseInt(anio);
+
+        if (dia == 25 || mes == 12) {
+            document.write("<br>" + "Es navidad" + "<br>");
+        } else {
+            document.write("<br>" + "No es navidad " + c + "<br>");
+        }
+    </script>
+    <script>
+        //Parte 3
+
+        let A = prompt("Ingresa un numero");
+        let B = prompt("Ingresa el segundo numero");
+        let C = prompt("Ingresa el tercer numero");
+
+        A = parseInt(A);
+        B = parseInt(B);
+        C = parseInt(C);
+
+        if (A == B && A == C) {
+            document.write("<br>" + "El resultado es:  " + ((A + B) * C) + "<br>");
+        } else {
+            document.write("<br>" + "Los numeros no son iguales " + "<br>");
+        }
+    </script>
+    <script>
+        //Parte 4
+
+        let X = prompt("Ingresa un numero");
+        let Y = prompt("Ingresa el segundo numero");
+        let Z = prompt("Ingresa el tercer numero");
+
+        X = parseInt(X);
+        Y = parseInt(Y);
+        Z = parseInt(Z);
+
+        if (10 > X && 10 > Y && 10 > Z) {
+            document.write("<br>" + "Todos los numeros son menores a 10" + "<br>");
+        } else {
+            document.write("<br>" + "Alguno de ellos es mayor a 10" + "<br>");
+        }
+    </script>
+
+
+    <script>
+        //Parte 5
+
+        let x = prompt("Ingresa el valor X");
+        x = parseInt(x);
+        let y = prompt("Ingresa el valor Y");
+        y = parseInt(y);
+
+
+        if (x > 0) {
+            if (y > 0) {
+                document.write("<br>" + "Primer cuadrante" + "<br>");
+            }
+            else {
+                document.write("<br>" + "Cuarto cuadrante" + "<br>");
+            }
+        }
+        else {
+            if (y > 0) {
+                document.write("<br>" + "Segundo cuadrante" + "<br>");
+            }
+            else {
+                document.write("<br>" + "Tercer cuadrante" + "<br>");
+            }
+
+        }
+    </script>
+    <script>
+        //Parte 6
+
+        let sueldo = prompt("Ingresa el sueldo");
+        let antiguedad = prompt("Ingresa los años de antigüedad");
+
+        sueldo = parseFloat(sueldo);
+        antiguedad = parseInt(antiguedad);
+        document.write("<br>" + "Sueldo: ")
+        if (sueldo >= 500) {
+            document.write(sueldo + "<br>");
+        } else if (sueldo < 500 && antiguedad >= 10) {
+            sueldo *= 1.2;
+            document.write(sueldo + "<br>");
+        } else if (sueldo < 500 && antiguedad < 10) {
+            sueldo *= 1.05;
+            document.write(sueldo + "<br>");
+        }
+
+    </script>
+
+</body>
+
+</html>

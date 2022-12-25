@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta author="Pablo Oller Pérez">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 14</title>
+</head>
+
+<body>
+    <script>
+        //Ejercicio 1
+        let perimetro = (l) => {
+            return (l * 4);
+        }
+
+        var l = prompt("Dime el lado de un cuadrado:");
+        l = parseInt(l);
+
+        document.write("<br> Su perímetro es: " + perimetro(l));
+    </script>
+    <br>
+    <br>
+    <script>
+        //Ejercicio 2
+        let digitos = (n) => {
+            var cont = 1;
+            while (n / 10 > 1) {
+                n /= 10;
+                cont++;
+            }
+            return cont;
+        }
+        do{
+        var n = prompt("Dime un numero:");
+        n = parseInt(n);
+        }while(digitos(n)>5);
+        document.write("<br>El numero tiene: " + digitos(n) + " dígitos");
+    </script>
+    <br>
+    <br>
+    <script>
+        //Ejercicio 3
+        let promedio = (a, b, c) => {
+            return ((a + b + c) / 3)
+        }
+        var a = prompt("Dime el primer numero:");
+        var b = prompt("Dime el segundo numero:");
+        var c = prompt("Dime el tercer numero:");
+        a = parseInt(a);
+        b = parseInt(b);
+        c = parseInt(c);
+        document.write("<br>El promedio es: " + promedio(a, b, c));
+    </script>
+    <br>
+    <br>
+    <script>
+        //Ejercicio 4
+        let suma = (a, b, c, d, e) => {
+            return (a + b + c + d + e);
+        }
+        var a = prompt("Dime el primer numero:");
+        var b = prompt("Dime el segundo numero:");
+        var c = prompt("Dime el tercer numero:");
+        var d = prompt("Dime el cuarto numero:");
+        var e = prompt("Dime el quinto numero:");
+        a = parseInt(a);
+        b = parseInt(b);
+        c = parseInt(c);
+        d = parseInt(d);
+        e = parseInt(e);
+        document.write("<br>La suma es: " + suma(a, b, c, d, e));
+    </script>
+    <br>
+    <br>
+</body>
+
+</html>

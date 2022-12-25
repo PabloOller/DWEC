@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta author="Pablo Oller Pérez">
+    <title>Ejercicio 23</title>
+
+</head>
+
+<body>
+<h3>Deportes</h3>
+    <form>
+        Selecciona los deportes que practicas:<br>
+        <input type="checkbox" id="caja1">Fútbol
+        <input type="checkbox" id="caja2">Básket
+        <input type="checkbox" id="caja3">Tenis<br>
+        <input type="button" value="Controlar" onClick="verificar()">
+    </form>
+
+    <script>
+        function verificar() {
+            var deportes = '';
+            if (document.getElementById("caja1").checked) {
+                deportes = deportes + 'Fútbol ';
+            }
+            if (document.getElementById("caja2").checked) {
+                deportes = deportes + 'Básquet ';
+            }
+            if (document.getElementById("caja3").checked) {
+                deportes = deportes + 'Tenis';
+            }
+            alert('Los deportes que practicas son:' + deportes);
+        }
+    </script>
+
+</body>
+
+</body>
+
+</html>

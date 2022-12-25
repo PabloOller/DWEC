@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta author="Pablo Oller Pérez">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 50</title>
+</head>
+
+<body>
+    <label for="nombre">Nombre del cliente: </label>
+    <input type="text" id="nombre" value="">
+    <br>
+    <label for="material">Material de la caja: </label>
+    <select id="material">
+        <option value="Madera">Madera</option>
+        <option value="Carton">Cartón</option>
+        <option value="Plastico">Plástico</option>
+        <option value="Metalica">Metálica</option>
+    </select>
+    <br>
+    <label>Seleccione unas dimensiones para la caja</label>
+    <br>
+    <input type="radio" name="dimensiones" id="s" value="Diminuto">Diminuto
+    <br>
+    <input type="radio" name="dimensiones" id="m" value="Mediano">Mediano
+    <br>
+    <input type="radio" name="dimensiones" id="l" value="Grande">Grande
+    <br>
+    <label for="comentarios">Comentarios: </label>
+    <br>
+    <textarea id="comentarios" rows="10" cols="30"></textarea>
+    <br>
+    <input type="submit" onclick="mostrarSeleccion()">
+    <input type="text" size="100" id="resultado">
+    <script>
+        function mostrarSeleccion() {
+            var res = document.getElementById('resultado');
+            var nombre = document.querySelector('#nombre').value;
+            var material = document.querySelector('#material').value;
+            var dimension = document.querySelector("input[name = dimensiones]:checked").value;
+            var comentario = document.getElementById('comentarios').value;
+
+            res.value = nombre + " ha pedido una caja de " + material + " de tamaño " + dimension + ". " + comentario;
+        }
+    </script>
+</body>
+
+</html>

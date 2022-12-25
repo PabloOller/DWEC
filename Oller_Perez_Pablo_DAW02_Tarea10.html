@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta author="Pablo Oller Pérez">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 10</title>
+</head>
+
+<body>
+    <script>
+        //Ejercicio 1
+        var cont = 1;
+        var contMayores = 0;
+        var contMenores = 0;
+        while (cont <= 10) {
+            nota = prompt("Escribe la nota numero " + cont);
+            nota = parseInt(nota);
+
+            if (nota >= 7) {
+                ++contMayores;
+
+            } else {
+                ++contMenores;
+            }
+            cont++
+        }
+        document.write("<br>" + " Numero de notas mayores a 7: " + contMayores);
+        document.write("<br>" + " Numero de notas menores a 7: " + contMenores);
+
+    </script>
+    <br>
+    <br>
+    <script>
+        //Ejercicio 2
+
+        contador = 1;
+        altura = 0;
+
+        while (contador <= 5) {
+            alt = prompt("Altura " + contador + ": ");
+            alt = parseFloat(alt);
+
+            altura += alt;
+            contador++;
+        }
+        document.write("La altura media es de " + (altura / 5) + "cm");
+    </script>
+    <br>
+    <br>
+    <script>
+        //Ejercicio 3
+        var cont = 1;
+        var contMayores = 0;
+        var contMenores = 0;
+        var sueldoTotal = 0;
+
+        while (cont <= 5) {
+            sueldo = prompt("Ingresa el sueldo " + cont);
+            sueldo = parseInt(sueldo);
+            if (sueldo > 500 || sueldo < 100) {
+                alert("Sueldo no valido");
+            } else {
+                if (sueldo > 300) {
+                    ++contMayores;
+                    sueldoTotal += sueldo;
+
+                } else {
+                    ++contMenores;
+                    sueldoTotal += sueldo;
+                }
+                cont++
+            }
+        }
+        document.write("<br>" + " Sueldos mayores a 300: " + contMayores);
+        document.write("<br>" + " Sueldos menores o iguales a 300: " + contMenores);
+        document.write("<br>" + " El sueldo total es: " + sueldoTotal);
+
+    </script>
+    <script>
+        //Ejercicio 4
+
+        document.write("<br>" + "programa que imprima 20 términos de la serie 5 " + "<br>" + "<br>");
+
+        contador = 1;
+        num = 5;
+
+        while (contador <= 20) {
+            document.write(num + " - ");
+            num += 5;
+            contador++;
+        }
+    </script>
+    <script>
+        //Ejercicio 5
+
+        document.write("<br>" + "Múltiplos de 10 hasta el valor 1500. " + "<br>" + "<br>");
+        var cont = 1;
+        while ((cont * 10) <= 1500) {
+            if ((cont * 10) == 1500) {
+                document.write((10 * cont));
+            } else {
+                document.write((10 * cont) + " - ");
+            }
+            cont++
+        }
+    </script>
+    <br>
+    <br>
+    <script>
+        //Ejercicio 6
+        contador = 1;
+        lista1 = 0;
+        lista2 = 0;
+
+        alert(" LISTA 1");
+
+        while (contador <= 3) {
+            num1 = prompt("Número " + contador + ": ")
+            num1 = parseInt(num1);
+
+            lista1 += num1;
+            contador++;
+        }
+
+        contador = 1;
+        num1 = 0;
+
+        alert(" LISTA 2");
+
+        while (contador <= 3) {
+            num1 = prompt("Número " + contador + ": ")
+            num1 = parseInt(num1);
+
+            lista2 += num1;
+            contador++;
+        }
+
+        if (lista1 > lista2) {
+            document.write("La lista 1 es mayor que la lista 2");
+        }
+
+
+        if (lista1 < lista2) {
+            document.write("La lista 2 es mayor que la lista 1");
+        }
+
+        if (lista1 == lista2) {
+            document.write("Las listas son iguales");
+        }
+    </script>
+    <script>
+        //Ejercicio 7
+        var cont = 1;
+        var contPares = 0;
+        var contImpares = 0;
+
+        while (cont <= 5) {
+            numero = prompt("Ingresa un número " + cont);
+            numero = parseInt(numero);
+
+            if (numero % 2 == 0) {
+                ++contPares;
+
+            } else {
+                ++contImpares;
+            }
+            cont++
+
+        }
+        document.write("<br>" + " Numreros pares: " + contPares);
+        document.write("<br>" + " Numeros impares: " + contImpares);
+
+
+    </script>
+</body>
+
+</html>

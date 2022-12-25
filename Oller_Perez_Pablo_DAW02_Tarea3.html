@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta author="Pablo Oller Pérez">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios 1 , 2 y 3</title>
+</head>
+
+<body>
+    <script>
+        //Parte 1
+        let N = prompt("Introduce un numero");
+
+        N = parseFloat(N);
+        N += 77;
+        N -= 3;
+        N *= 2;
+        document.write("<br>" + "El resultado es: " + N + "<br>");
+    </script>
+    <script>
+        //Parte 2
+        let A = prompt("Ingresa la primera variable");
+        let B = prompt("Ingresa la segunda variable");
+        let C = prompt("Ingresa la tercera variable");
+        let D = prompt("Ingresa la cuarta variable");
+        A = parseInt(A);
+        B = parseInt(B);
+        C = parseInt(C);
+        D = parseInt(D);
+        let aux = A;
+        A = D;
+        D = B;
+        B = C;
+        C = aux;
+        document.write("<br>" + "El resultado es: A:" + A + " B:" + B + " C:" + C + " D:" + D + "<br>");
+    </script>
+
+    <script>
+        //Parte 3
+
+        let b = prompt("Ingresa una variable");
+
+
+        b = parseInt(b);
+        if (b < 0) {
+            document.write("<br>" + "El resultado es negativo" + "<br>");
+        } else {
+            document.write("<br>" + "El resultado es positivo" + "<br>");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta author="Pablo Oller Pérez">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 11</title>
+</head>
+
+<body>
+    <script>
+        //Ejercicio 1
+        contador = 0;
+
+        for (var i = 0; i < 3; i++) {
+            altura = prompt("Altura del triángulo: ");
+            altura = parseFloat(altura);
+            base = prompt("Base del triángulo: ");
+            base = parseFloat(base);
+
+            superficie = (base * altura) / 2;
+
+            document.write("<br>" + "La base del triángulo " + (i + 1) + " es: " + altura + "cm y su base es de " + base + "cm");
+            document.write("<br>" + "La superficie del triángulo " + (i + 1) + " es de " + superficie + "cm");
+            if (superficie > 12) {
+                contador++;
+            }
+        }
+
+        if (contador > 0) {
+            document.write("Hay " + contador + " triángulos con superficie mayor a 12 <br>");
+        }
+        else {
+            document.write("<br>" + "No hay triángulos con superficie mayor a 12cm");
+        }
+    </script>
+    <br>
+    <br>
+    <script>
+        //Ejercicio 2
+        var suma = 0;
+        for (var i = 1; i <= 10; i++) {
+            var numero = prompt("Ingresa un número: ");
+            numero = parseInt(numero);
+            if (i > 5) {
+                suma += numero;
+            }
+        }
+        document.write("<br>" + "La suma de los 5 últimos numeros es: " + suma);
+    </script>
+    <br>
+    <br>
+    <script>
+        //Ejercicio 3
+        document.write("<br>" + "Tabla de multiplicar del 5: ");
+        for (var i = 1; i <= 5; i++) {
+            document.write("<br>" + "5 x " + i + " = " + (5 * i));
+        }
+    </script>
+    <br>
+    <br>
+    <script>
+        //Ejercicio 4
+
+        do {
+            var num = prompt("Numero del 1 al 10: ");
+            num = parseInt(num);
+            if (!(num < 1 || num > 10)) {
+                for (var i = 1; i <= 12; i++) {
+                    document.write("<br>" + num + " x " + i + " = " + (num * i));
+                }
+            }
+        } while (num < 1 || num > 10);
+
+    </script>
+    <br>
+    <br>
+    <script>
+        //Ejercicio 5
+
+        var equilateros = 0;
+        var isosceles = 0;
+        var escalenos = 0;
+
+        for (var i = 1; i <= 4; i++) {
+            var lado1 = prompt("Lado 1 del triángulo: ");
+            var lado1 = parseFloat(lado1);
+
+            var lado2 = prompt("Lado 2 del triángulo: ");
+            var lado2 = parseFloat(lado2);
+
+            var lado3 = prompt("Lado 3 del triángulo: ");
+            var lado3 = parseFloat(lado3);
+
+            if (lado1 == lado2 && lado1 == lado3) {
+                equilateros++;
+                document.write("<br>" + "El triángulo " + (i + 1) + " es equilátero.");
+            }
+
+            if ((lado1 == lado2 && lado1 != lado3) || (lado1 != lado2 && lado1 == lado3)) {
+                isosceles++;
+                document.write("<br>" + "El triángulo " + (i + 1) + " es isósceles.");
+            }
+
+            if (lado1 != lado2 && lado1 != lado3) {
+                escalenos++;
+                document.write("<br>" + "El triángulo " + (i + 1) + " es escaleno.");
+            }
+        }
+
+        document.write("<br>" + "Hay " + equilateros + " triángulos equiláteros");
+        document.write("<br>" + "Hay " + isosceles + " triángulos isósceles");
+        document.write("<br>" + "Hay " + escalenos + " triángulos escalenos");
+
+
+        if (equilateros > escalenos && equilateros > isosceles) {
+            document.write("<br>" + "Hay más triángulos equiláteros.")
+        }
+
+        if (equilateros < escalenos && escalenos > isosceles) {
+            document.write("<br>" + "Hay más triángulos escalenos.")
+        }
+
+        if (isosceles > escalenos && equilateros < isosceles) {
+            document.write("<br>" + "Hay más triángulos isósceles.")
+        }
+
+    </script>
+    <br>
+    <br>
+    <script>
+        //Ejercicio 6
+        var num = prompt("numero de puntos a ingresar: ");
+        num = parseInt(num);
+        var cont1 = 0;
+        var cont2 = 0;
+        var cont3 = 0;
+        var cont4 = 0;
+
+        for (var i = 1; i <= num; i++) {
+            var x = prompt("Coordenada x: ");
+            var y = prompt("Coordenada y: ");
+            x = parseInt(x);
+            y = parseInt(y);
+            if (x >= 0) {
+                if (y >= 0) {
+                    cont1++;
+                } else {
+                    cont4++;
+                }
+            } else {
+                if (y >= 0) {
+                    cont2++;
+                } else {
+                    cont3++;
+                }
+            }
+        }
+        document.write("<br>" + "numero de puntos en el primer cuadrante: " + cont1);
+        document.write("<br>" + "numero de puntos en el segundo cuadrante: " + cont2);
+        document.write("<br>" + "numero de puntos en el tercer cuadrante: " + cont3);
+        document.write("<br>" + "numero de puntos en el cuarto cuadrante: " + cont4);
+
+    </script>
+    <br>
+    <br>
+    <script>
+        //Ejercicio 7
+
+        var negativos = 0;
+        var positivos = 0;
+        var multiplos = 0;
+        var sumaPares = 0;
+
+        for (i = 0; i < 10; i++) {
+            lado1 = prompt("Número: " + (i + 1));
+            lado1 = parseFloat(lado1);
+
+            if (lado1 > 0) {
+                ++positivos;
+            }
+
+            if (lado1 < 0) {
+                ++negativos;
+            }
+
+            if (lado1 % 15 == 0) {
+                ++multiplos;
+            }
+
+            if (lado1 % 2 == 0) {
+                sumaPares += lado1;
+            }
+        }
+
+        document.write("<br>" + "Hay " + positivos + " números positivos");
+        document.write("<br>" + "Hay " + negativos + " números negativos");
+        document.write("<br>" + "Hay " + multiplos + " números múltiplos de 15");
+        document.write("<br>" + "La suma de los números pares ingresados es de: " + sumaPares);
+    </script>
+    <br>
+    <br>
+    <script>
+        //Ejercicio 8
+        var sumaManhana = 0;
+        var sumaTarde = 0;
+        var sumaNoche = 0;
+        for (var i = 1; i <= 5; i++) {
+            do {
+                var numero = prompt("La edad del alumno " + i + " del turno de mañana (que no sea negativostivo): ");
+                numero = parseInt(numero);
+            } while (numero < 0);
+            sumaManhana += numero;
+        }
+        sumaManhana /= 5;
+        document.write("<br>" + "El promedio de edad de los del turno de mañana es: " + sumaManhana);
+        for (var i = 1; i <= 6; i++) {
+            do {
+                var numero = prompt("La edad del alumno " + i + " del turno de tarde (que no sea negativostivo): ");
+                numero = parseInt(numero);
+            } while (numero < 0);
+            sumaTarde += numero;
+        }
+        sumaTarde /= 6;
+        document.write("<br>" + "El promedio de edad de los del turno de tarde es: " + sumaTarde);
+        for (var i = 1; i <= 11; i++) {
+            do {
+                var numero = prompt("La edad del alumno " + i + " del turno de noche (que no sea negativostivo): ");
+                numero = parseInt(numero);
+            } while (numero < 0);
+            sumaNoche += numero;
+        }
+        sumaNoche /= 11;
+        document.write("<br>" + "El promedio de edad de los del turno de noche es: " + sumaNoche);
+        var turnoMayor = "el turno de mañana";
+        if (sumaTarde > sumaManhana && sumaTarde > sumaNoche) {
+            turnoMayor = "el turno de tarde";
+        } else if (sumaNoche > sumaManhana && sumaTarde < sumaNoche) {
+            turnoMayor = "el turno de noche";
+        }
+        document.write("<br>" + "El turno con mayor promedio de edad es: " + turnoMayor);
+
+    </script>
+</body>
+
+</html>

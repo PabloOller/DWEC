@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta author = "Pablo Oller Pérez">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 47</title>
+</head>
+
+<body>
+
+    <input type="button" value="Generar Tabla" onclick="generar()">
+    <script>
+        function generar() {
+            var body = document.body;
+
+            var tabla = document.createElement('table');
+            var tblBody = document.createElement('tbody');
+
+            for (var i = 0; i < 4; i++) {
+                var columnas = document.createElement("tr");
+                for (var j = 0; j < 4; j++) {
+                    var celda = document.createElement("td");
+                    var textoCelda = document.createTextNode("fila " + i + ", columna " + j);
+                    celda.appendChild(textoCelda);
+                    columnas.appendChild(celda);
+                }
+
+                tblBody.appendChild(columnas);
+            }
+            tabla.appendChild(tblBody);
+            body.appendChild(tabla);
+            tabla.style.border= "5px solid red";
+        }
+    </script>
+</body>
+
+</html>

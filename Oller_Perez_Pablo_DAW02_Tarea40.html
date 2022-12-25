@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 39</title>
+</head>
+
+<body>
+    <script>
+        class Fecha {
+        
+            static retornarMes(mes) {
+                var Nombre="";
+                switch (mes) {
+                    case 1: Nombre = "Enero";
+                     break;
+                    case 2: Nombre = "Febrero";
+                     break;
+                    case 3: Nombre = "Marzo"; 
+                    break;
+                    case 4: Nombre = "Abril"; 
+                    break;
+                    case 5: Nombre = "Mayo"; 
+                    break;
+                    case 6: Nombre = "Junio"; 
+                    break;
+                    case 7: Nombre = "Julio"; 
+                    break;
+                    case 8: Nombre = "Agosto"; 
+                    break;
+                    case 9: Nombre = "Septiembre"; 
+                    break;
+                    case 10: Nombre = "Octubre";
+                     break;
+                    case 11: Nombre = "Noviembre"; 
+                    break;
+                    case 12: Nombre = "Diciembre"; 
+                    break;
+                    default: Nombre = "Mes erróneo";
+                     break;
+                }
+                return Nombre;
+            }
+            static fechaCompleta(){
+                var FechaAct="";
+                Fecha1 = new Date();
+                FechaAct= Fecha1.getDate()+"-"+(Fecha1.getMonth()+1)+"-"+Fecha1.getFullYear();;
+                return FechaAct;
+            } 
+        }
+        var mes = parseInt(prompt("Dime el mes: "));
+        document.write(Fecha.retornarMes(mes)+"<br>");
+        Fecha1 = new Date();
+        document.write(Fecha.fechaCompleta());
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta author="Pablo Oller Pérez">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 16</title>
+</head>
+
+<body>
+    <script>
+        //Ejercicio 1
+        function comprobar() {
+            pass1 = document.getElementById("pass1").value;
+            pass2 = document.getElementById("pass2").value;
+
+            if (pass1 == pass2) {
+                alert("Las contraseñas son iguales");
+            } else {
+                alert("Las contraseñas son distintas");
+            }
+        }
+    </script>
+    <script>
+        //Mejora
+        function mostrarContrasena() {
+            var tipo = document.getElementById("pass1");
+            if (tipo.type == "password") {
+                tipo.type = "text";
+            }
+            else if (tipo.type == "text") {
+                tipo.type = "password";
+            }
+        }
+
+        function mostrarContrasena2() {
+            var tipo = document.getElementById("pass2");
+            if (tipo.type == "password") {
+                tipo.type = "text";
+            }
+            else if (tipo.type == "text") {
+                tipo.type = "password";
+            }
+        }
+    </script>
+    <!--Ejercicio 1-->
+    <form>
+        <input type="password" id="pass1">
+        <input type="password" id="pass2">
+        <input type="button" value="Comprobar" onclick="comprobar()">
+        <!--Mejora-->
+        <input type="button" value="mostrarContrasena" onclick="mostrarContrasena();mostrarContrasena2()">
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTi-8">
+    <meta author="Pablo Oller Pérez">
+    <title>Ejercicio 27</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <script>
+        //Ejercicio 1
+        var vector = [];
+        for (var i = 0; i < 10; i++) {
+            var n = (Math.random() * 1001);
+            vector.push(parseInt(n));
+        }
+        var vector2 = vector.slice(vector[Math.min(vector)]);
+        for(var i=0;i<vector.length();i++){
+            document.write(vector[i]+' ');
+        }
+        document.write('<br>');
+        for(var i=0;i<vector2.length();i++){
+            document.write(vector2[i]+' ');
+        }
+    </script>
+    <script>
+        //Ejercicio 2
+        var nombres = new Array(5);
+        for (var i = 0; i < nombres.length; i++) {
+            nombres[i] = prompt('Indica un nombre:');
+        }
+        document.write(nombres.join('<br>'));
+       
+    </script>
+    <script>
+        //Ejercicio 3
+        var vector = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        var cadena1 = vector.toString();
+        var cadena2 = vector.join();
+        if (cadena1 == cadena2)
+            document.write('Son iguales');
+        else
+            document.write('No son iguales');
+    </script>
+
+</body>
+
+</html>

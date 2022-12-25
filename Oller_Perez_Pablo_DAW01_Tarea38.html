@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta author="Pablo Oller Pérez">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 38</title>
+</head>
+
+<body>
+    <script>
+        function Calculadora(n1,n2) {
+            this.n1 = n1;
+            this.n2 = n2;
+            this.resultado = null;
+
+            this.sumar = function () {
+                this.resultado = this.n1 + this.n2;
+                document.write(`La suma de ${this.n1} y ${this.n2} es `);
+                this.ans();
+            }
+
+            this.restar = function () {
+                this.resultado = this.n1 - this.n2;
+                document.write(`La resta de ${this.n1} y ${this.n2} es `);
+                this.ans();
+            }
+
+            this.multiplicar = function () {
+                this.resultado = this.n1 * this.n2;
+                document.write(`La multiplicación de ${this.n1} y ${this.n2} es `);
+                this.ans();
+            }
+
+            this.dividir = function () {
+                this.resultado = this.n1 / this.n2;
+                document.write(`La división de ${this.n1} y ${this.n2} es `);
+                this.ans();
+            }
+
+            this.ans = function() {
+                document.write(this.resultado + '<br>');
+            }
+        }
+    
+            Calculadora.prototype.cuadrado = function() {
+                this.resultado = this.n1 * this.n1;
+                document.write(`${this.n1} elevado al cuadrado es `);
+                this.ans();
+            }
+
+            Calculadora.prototype.raizCuadrada = function() {
+                this.resultado = Math.sqrt(this.n1);
+                document.write(`La raiz cuadrada de ${this.n1}  es `);
+                this.ans();
+            }
+        
+    
+
+        let num1 = parseInt(prompt("Indica el primer número:"));
+        let num2 = parseInt(prompt("Indica el segundo número:"));
+        const calculadora1 = new Calculadora(num1, num2);
+        document.write('<h1>Calculadora</h1>');
+        calculadora1.sumar();
+        calculadora1.restar();
+        calculadora1.multiplicar();
+        calculadora1.dividir();
+        calculadora1.cuadrado();
+        calculadora1.raizCuadrada();
+
+    </script>
+
+</body>
+
+</html>

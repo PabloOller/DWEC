@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta author="Pablo Oller Pérez">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 en raya</title>
+    <style>
+        body {
+            background-color: black;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        #titulo {
+            margin: 0 auto;
+            text-align: center;
+            font-size: 40px;
+            color:  rgb(34, 255, 0);
+        }
+
+        #tabla {
+            
+            margin: 0 auto;
+            width: 600px;
+            height: 600px;
+            border: solid 2px black;
+        }
+
+        #tabla td {
+            background-color: rgb(34, 255, 0);
+            text-align: center;
+            border: solid 1px black;
+            font-size: 45px;
+            color: black;
+            width: 200px;
+            height: 200px;
+        }
+        #solucion{
+            margin: 0 auto;
+            border: solid 3px rgb(34, 255, 0);
+            color: yellow;
+            width: fit-content;
+            margin-bottom: 5%;
+        }
+        #reiniciador{
+            margin: 0 auto;
+            width: fit-content;
+        }
+        #BReiniciar{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: bold;
+            background-color: black;
+            color: rgb(34, 255, 0);
+            border: dashed 4px rgb(34, 255, 0);
+            width: 150px;
+            height: 50px;
+            border-radius: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        var Arr = [0, 0, 0, 0, 0, 0, 0, 0, 0,];
+        var Turno = 1;
+
+        function pulsar(celda) {
+            if (Arr[celda] == 0) {
+                if (Turno == 1) {
+                    Arr[celda] = 1;
+                    Turno = 2;
+                    document.getElementById("c" + celda).innerHTML = "X";
+                } else {
+                    Arr[celda] = 2;
+                    Turno = 1;
+                    document.getElementById("c" + celda).innerHTML = "O";
+                }
+            } else {
+                alert("No puedes pulsarla");
+            }
+            var r = ganador();
+            switch (r) {
+                case 0:
+                    break;
+                case 1:
+                    document.getElementById("sol").innerHTML = "¡Ganaron las cruces!";
+                    for (i = 0; i < 9; i++) {
+                        if (Arr[i] == 0) {
+                            Arr[i] = 3;
+                        }
+                    } break;
+                case 2:
+                    document.getElementById("sol").innerHTML = "¡Ganaron los circulos!";
+                    for (i = 0; i < 9; i++) {
+                        if (Arr[i] == 0) {
+                            Arr[i] = 3;
+                        }
+                    }
+                    break;
+                case 3:
+                    document.getElementById("sol").innerHTML = "¡Empate!";
+                    break;
+            }
+        }
+        function ganador() {
+            var numEspacios = 0;
+            for (i = 0; i < 9; i++) {
+                if (Arr[i] == 0) {
+                    numEspacios++;
+                }
+            }
+            if (Arr[0] == Arr[1] && Arr[1] == Arr[2] && Arr[0] != 0) {
+                return Arr[0];
+            }
+            if (Arr[3] == Arr[4] && Arr[4] == Arr[5] && Arr[3] != 0) {
+                return Arr[3];
+            }
+            if (Arr[6] == Arr[7] && Arr[7] == Arr[8] && Arr[6] != 0) {
+                return Arr[6];
+            }
+            if (Arr[0] == Arr[3] && Arr[3] == Arr[6] && Arr[0] != 0) {
+                return Arr[0];
+            }
+            if (Arr[1] == Arr[4] && Arr[4] == Arr[7] && Arr[1] != 0) {
+                return Arr[1];
+            }
+            if (Arr[2] == Arr[5] && Arr[5] == Arr[8] && Arr[2] != 0) {
+                return Arr[2];
+            }
+            if (Arr[0] == Arr[4] && Arr[4] == Arr[8] && Arr[0] != 0) {
+                return Arr[0];
+            }
+            if (Arr[2] == Arr[4] && Arr[4] == Arr[6] && Arr[2] != 0) {
+                return Arr[2];
+            }
+
+            if (numEspacios > 0) {
+                return 0;
+            } else {
+                return 3;
+            }
+        }
+    </script>
+    <div id="titulo">
+        <h2>TRES EN RAYA</h2>
+    </div>
+    <table id="tabla">
+        <tr>
+            <td id="c0" onclick="pulsar(0)"></td>
+            <td id="c1" onclick="pulsar(1)"></td>
+            <td id="c2" onclick="pulsar(2)"></td>
+        </tr>
+        <tr>
+            <td id="c3" onclick="pulsar(3)"></td>
+            <td id="c4" onclick="pulsar(4)"></td>
+            <td id="c5" onclick="pulsar(5)"></td>
+        </tr>
+        <tr>
+            <td id="c6" onclick="pulsar(6)"></td>
+            <td id="c7" onclick="pulsar(7)"></td>
+            <td id="c8" onclick="pulsar(8)"></td>
+        </tr>
+    </table>
+    <div id="solucion">
+        <p id="sol"></p>
+    </div>
+    <div id="reiniciador">
+        <a href="https://educacionadistancia.juntadeandalucia.es/centros/malaga/pluginfile.php/614969/assignsubmission_file/submission_files/178789/Oller_Perez_Pablo_DAW01_Tarea31.html"><input type="button" id="BReiniciar" value="REINICIAR"></a>
+    </div>
+
+</body>
+
+</html>

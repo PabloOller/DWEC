@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 41</title>
+</head>
+
+<body>
+    <div id="bloque1">
+        <p>Este es el primer párrafo</p>
+        <p>Este es el segundo párrafo</p>
+    </div>
+    <hr>
+    <div id="bloque2">
+        <p>Este es el primer párrafo</p>
+        <p>Este es el segundo párrafo</p>
+    </div>
+    <input type="button" value="Números de nodos hijo" onClick="nodosHijos()">
+    <input type="button" value="Números de hijos tipo elemento" onClick="nodosHijosElemento()">
+
+    <h1 id="contador">1</h1>
+    <input type="button" value="Aumentar" onClick="aumento()">
+    <script>
+        function nodosHijos() {
+            var objeto1 = document.getElementById("bloque1");
+            alert("La cantidad de hijos del primer div es:" + objeto1.childNodes.length);
+            var objeto2 = document.getElementById("bloque2");
+            alert("La cantidad de hijos del segundo div es:" + objeto2.childNodes.length);
+        }
+
+        function nodosHijosElemento() {
+            var objeto1 = document.getElementById("bloque1");
+            alert("La cantidad de hijos del primer div es:" + objeto1.children.length);
+            var objeto2 = document.getElementById("bloque2");
+            alert("La cantidad de hijos del segundo div es:" + objeto2.children.length);
+        }
+
+        function aumento() {
+            var obj = document.getElementById("contador")
+            obj.childNodes[0].nodeValue = parseInt(obj.childNodes[0].nodeValue) + 1
+        }
+    </script>
+
+</body>
+
+</html>

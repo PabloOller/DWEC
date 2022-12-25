@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTi-8">
+    <meta author="Pablo Oller Pérez">
+    <title>Ejercicio 32</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <p>Posiciones de los 3 en el array:</p>
+    <p id="sol"></p>
+    <script>
+        var index = "";
+        var Arr = [4, 0, 3, 4, 7, 3, 5, 8, 1, 8, 8, 0, 2, 3, 1, 2, 5, 7, 3, 2, 5, 1];
+        do {
+            var pos = Arr.indexOf(3);
+            if (pos != -1) {
+                index += pos+ " ";
+                Arr[pos]=4;
+            }
+        } while (Arr.indexOf(3) != -1);
+        document.getElementById("sol").innerHTML=index;
+    </script>
+</body>
+
+</html>
