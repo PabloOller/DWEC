@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 57</title>
+</head>
+
+<body>
+    <h2>Parte 1</h2>
+    <textarea id="area" cols="50" rows="10" onkeyup="letras(event)"></textarea>
+    <h2>Parte 2</h2>
+    <textarea id="area2" cols="50" rows="10" onkeyup="espacios()"></textarea>
+    <script>
+        function letras(event) {
+            alert("Has presionado la letra: " + event.key);
+        }
+        function espacios() {
+            var n = document.getElementById('area2');
+            if (n.value.endsWith(" ")) {
+                n.value = n.value.substring(0, n.value.length - 1)
+                alert("El nombre de usuario no puede contener espacios");
+            }
+
+        }
+    </script>
+</body>
+
+</html>

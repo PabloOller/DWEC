@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 58</title>
+</head>
+
+<body>
+    <table id="tabla">
+        <tr>
+            <th>Nombre</th>
+            <th class="edad">Edad</th>
+        </tr>
+        <tr>
+            <td>dardo</td>
+            <td class="edad">52</td>
+        </tr>
+        <tr>
+            <td>pedro</td>
+            <td class="edad">522</td>
+        </tr>
+        <tr>
+            <td>ana</td>
+            <td class="edad">89</td>
+        </tr>
+        <tr>
+            <td>alicia</td>
+            <td class="edad">55</td>
+        </tr>
+        <tr>
+            <td>carlos</td>
+            <td class="edad">21</td>
+        </tr>
+        <tr>
+            <td>capitanich</td>
+            <td class="edad">89</td>
+        </tr>
+        <tr>
+            <td>carla</td>
+            <td class="edad">66</td>
+        </tr>
+        <tr>
+            <td>altina</td>
+            <td class="edad">90</td>
+        </tr>
+
+    </table>
+    <input type="text" id="nombre" value="" onkeyup="filtro(event)">
+    <script>
+
+        function filtro(event) {
+            if (event.target.value == "Escape") {
+                event.target.value = "";
+            }
+            var filas = document.querySelectorAll('tr');
+            var edad = document.querySelectorAll('.edad');
+            if (event.key != "Backspace") {
+                for (var i = 1; i < filas.length; i++) {
+                    if (!filas[i].innerText.startsWith(event.target.value.toLowerCase())) {
+                        if (!edad[i].innerText.startsWith(event.target.value)) {
+                            filas[i].style.display = "none";
+                        }
+                    }
+
+                }
+            } else {
+                for (var i = 1; i < filas.length; i++) {
+                    if (filas[i].style.display = "none") {
+                        filas[i].style.display = "";
+                        if (!filas[i].innerText.startsWith(event.target.value.toLowerCase())) {
+                            if (!edad[i].innerText.startsWith(event.target.value)) {
+                                filas[i].style.display = "none";
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

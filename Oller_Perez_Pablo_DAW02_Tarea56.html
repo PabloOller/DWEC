@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 56</title>
+</head>
+
+<body>
+    <div id="parrafo">Quién descubrió América y en qué año fue?</div>
+    <br>
+    <label for="1">Color de fondo:</label>
+    <select name="" onchange="valorSeleccionado()" id="1">
+        <option value=""></option>
+        <option value="white">Blanco</option>
+        <option value="green">verde</option>
+        <option value="yellow">amarillo</option>
+        <option value="blue">azul</option>
+        <option value="red">Rojo</option>
+    </select>
+    <br>
+    <label for="2">Color de fuente:</label>
+    <select name="" onchange="valorSeleccionado()" id="2">
+        <option value=""></option>
+        <option value="green">verde</option>
+        <option value="yellow">amarillo</option>
+        <option value="blue">azul</option>
+        <option value="black">negro</option>
+    </select>
+    <br>
+    <label for="3">Cambiar tamaño de la fuente:</label>
+    <select name="" onchange="valorSeleccionado()" id="3">
+        <option value=""></option>
+        <option value="10pt">10</option>
+        <option value="15pt">15</option>
+        <option value="20pt">20</option>
+        <option value="25pt">25</option>
+    </select>
+    <br>
+    <label for="4">Cambiar tipo de fuente:</label>
+    <select name="" onchange="valorSeleccionado()" id="4">
+        <option value=""></option>
+        <option value="Times New Roman">Times New Roman</option>
+        <option value="Arial">Arial</option>
+        <option value="Sans-serif">Sans-serif</option>
+    </select>
+    <br>
+    <label for="5">Cambiar el estilo de la fuente</label>
+    <select name="" onchange="valorSeleccionado()" id="5">
+        <option value=""></option>
+        <option value="normal">Normal</option>
+        <option value="italic">Cursiva</option>
+        <option value="oblique">Oblicua</option>
+    </select>
+    <br>
+    <label for="6">Peso de la fuente:</label>
+    <select name="" onchange="valorSeleccionado()" id="6">
+        <option value=""></option>
+        <option value="bolder">bolder</option>
+        <option value="normal">normal</option>
+    </select>
+    <br>
+    <label for="7">Alineación de la fuente:</label>
+    <select name="" onchange="valorSeleccionado()" id="7">
+        <option value=""></option>
+        <option value="left">left</option>
+        <option value="center">center</option>
+        <option value="right">right</option>
+    </select>
+    <br>
+    <label for="8">Decoración de la fuente:</label>
+    <select name="" onchange="valorSeleccionado()" id="8">
+        <option value=""></option>
+        <option value="none">Ninguno</option>
+        <option value="line-through">Linea A traves</option>
+        <option value="underline">Linea abajo</option>
+        <option value="overline">Linea Arriba</option>
+    </select>
+    <br>
+    <label for="9">Espacio entre letras:</label>
+    <select name="" onchange="valorSeleccionado()" id="9">
+        <option value=""></option>
+        <option value="2px">2</option>
+        <option value="4px">4</option>
+        <option value="6px">6</option>
+    </select>
+    <br>
+    <label for="10">Espacio entre palabras:</label>
+    <select name="" onchange="valorSeleccionado()" id="10">
+        <option value=""></option>
+        <option value="6px">6</option>
+        <option value="9px">9</option>
+        <option value="12px">12</option>
+    </select>
+    <br>
+    <label for="11">Transformación de texto:</label>
+    <select name="" onchange="valorSeleccionado()" id="11">
+        <option value=""></option>
+        <option value="uppercase">Mayusculas</option>
+        <option value="lowercase">minusculas</option>
+        <option value="none">ninguna</option>
+    </select>
+    <br>
+    <label for="12">Ancho de borde:</label>
+    <select name="" onchange="valorSeleccionado()" id="12">
+        <option value=""></option>
+        <option value="1px">1px</option>
+        <option value="3px">3px</option>
+        <option value="6px">6px</option>
+    </select>
+    <br>
+    <label for="13">Estilo de borde:</label>
+    <select name="" onchange="valorSeleccionado()" id="13">
+        <option value=""></option>
+        <option value="none">Ninguno</option>
+        <option value="solid">solido</option>
+        <option value="dotted">puntitos</option>
+    </select>
+    <br>
+    <label for="14">Color de borde:</label>
+    <select name="" onchange="valorSeleccionado()" id="14">
+        <option value=""></option>
+        <option value="black">Negro</option>
+        <option value="red">rojo</option>
+        <option value="yellow">amarillo</option>
+    </select>
+    <br>
+    <label for="15">padding:</label>
+    <select name="" onchange="valorSeleccionado()" id="15">
+        <option value=""></option>
+        <option value="0px">0px</option>
+        <option value="5px">5px</option>
+        <option value="10px">10px</option>
+        <option value="20px">20px</option>
+    </select>
+    <br>
+    <label for="16">margin:</label>
+    <select name="" onchange="valorSeleccionado()" id="16">
+        <option value=""></option>
+        <option value="0px">0px</option>
+        <option value="4px">4px</option>
+        <option value="6px">6px</option>
+        <option value="8px">8px</option>
+    </select>
+
+    <script>
+        function valorSeleccionado() {
+
+            var parrafo = document.getElementById('parrafo');
+            var selectores = document.getElementsByTagName('select');
+
+
+            for (var i = 0; i < selectores.length; i++) {
+                var selector = selectores[i];
+
+                switch (i) {
+                    case 0:
+                        var option = selector.options[selector.selectedIndex];
+                        parrafo.style.backgroundColor = option.value;
+                        break;
+
+                    case 1:
+                        var option = selector.options[selector.selectedIndex];
+                        parrafo.style.color = option.value;
+                        break;
+
+                    case 2:
+                        var option = selector.options[selector.selectedIndex];
+                        parrafo.style.fontSize = option.value;
+                        break;
+
+                    case 3:
+                        var option = selector.options[selector.selectedIndex];
+                        parrafo.style.fontFamily = option.value;
+                        break;
+
+                    case 4:
+                        var option = selector.options[selector.selectedIndex];
+                        parrafo.style.fontStyle = option.value;
+   
+                        break;
+
+                    case 5:
+                        var option = selector.options[selector.selectedIndex];
+                        parrafo.style.fontWeight = option.value;
+                        break;
+
+                    case 6:
+
+                        var option = selector.options[selector.selectedIndex];
+                        parrafo.style.textAlign = option.value;
+                        break;
+
+                    case 7:
+                        var option = selector.options[selector.selectedIndex];
+                        parrafo.style.textDecoration = option.value;
+                        break;
+
+                    case 8:
+                        var option = selector.options[selector.selectedIndex];
+                        parrafo.style.letterSpacing = option.value;
+                        break;
+
+                    case 9:
+                        var option = selector.options[selector.selectedIndex];
+                        parrafo.style.wordSpacing = option.value;
+                        break;
+
+                    case 10:
+
+                        var option = selector.options[selector.selectedIndex];
+                        parrafo.style.textTransform = option.value;
+                        break;
+
+                    case 11:
+                        var option = selector.options[selector.selectedIndex];
+                        parrafo.style.borderWidth = option.value;
+                        break;
+
+                    case 12:
+                        var option = selector.options[selector.selectedIndex];
+                        parrafo.style.borderStyle = option.value;
+                        break;
+
+                    case 13:
+                        var option = selector.options[selector.selectedIndex];
+                        parrafo.style.borderColor = option.value;
+                        break;
+
+                    case 14:
+                        var option = selector.options[selector.selectedIndex];
+                        parrafo.style.padding = option.value;
+                        break;
+
+                    case 15:
+                        var option = selector.options[selector.selectedIndex];
+                        parrafo.style.margin = option.value;
+                        break;
+
+
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
